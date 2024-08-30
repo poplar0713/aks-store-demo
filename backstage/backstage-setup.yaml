@@ -1,0 +1,33 @@
+# Create a Service Account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: backstage-account
+  namespace: pets
+---
+# Create Cluster Role Binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: backstage-binding
+subjects:
+- kind: ServiceAccount
+  name: backstage-account
+  namespace: pets
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+# Manually Create a Secret for the Service Account
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backstage-account-token
+  namespace: pets
+  annotations:
+    kubernetes.io/service-account.name: "backstage-account"
+type: kubernetes.io/service-account-token
+
+# kubectl get secret backstage-account-token -n pets -o jsonpath="{.data.token}" | base64 --decode
+# Update Backstage app-config.yaml >> serviceAccountToken
