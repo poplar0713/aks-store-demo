@@ -6,6 +6,7 @@ metadata:
   owner: poplar0713
   annotations:
     github.com/project-slug: 'poplar0713/aks-store-demo'
+    backstage.io/kubernetes-id: aks-demo-store
 spec:
   type: service
   lifecycle: production
