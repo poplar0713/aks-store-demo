@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aks-demo-store
+  description: aks-demo-store
+  owner: poplar0713
+  annotations:
+    github.com/project-slug: 'poplar0713/aks-store-demo'
+spec:
+  type: service
+  lifecycle: production
+  owner: Jeongdong
