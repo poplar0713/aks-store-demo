@@ -20,8 +20,6 @@ jobs:
     
     - name: Set up Azure CLI
       uses: azure/cli@v1
-      with:
-        version: latest
     
     - name: Login to Azure using Service Principal
       uses: azure/login@v1
