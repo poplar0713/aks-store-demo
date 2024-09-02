@@ -29,7 +29,11 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Set up kubelogin
-      uses: azure/setup-kubelogin@v1
+      uses: azure/use-kubelogin@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      with:
+        kubelogin-version: 'latest'
 
     - name: Get AKS credentials
       run: az aks get-credentials --resource-group rg-yeo --name aks-idp-demo --overwrite-existing
