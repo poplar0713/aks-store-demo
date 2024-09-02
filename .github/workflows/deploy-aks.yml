@@ -27,7 +27,10 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
+
+    - name: Set up kubelogin
+      uses: azure/setup-kubelogin@v1
+
     - name: Get AKS credentials
       run: az aks get-credentials --resource-group rg-yeo --name aks-idp-demo --overwrite-existing
     
