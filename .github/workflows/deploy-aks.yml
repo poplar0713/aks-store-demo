@@ -29,7 +29,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - name: Get AKS credentials
-      run: az aks get-credentials --resource-group rg-yeo --name aks-store-demo
+      run: az aks get-credentials --resource-group rg-yeo --name aks-idp-demo --overwrite-existing
     
     - name: Deploy to Kubernetes
-      run: kubectl apply -f kubernetes-resources.yaml
+      run: kubectl apply -f aks-store-all-in-one.yaml -n pets
