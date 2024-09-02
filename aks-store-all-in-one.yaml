@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: mongodb
   labels:
-    app: aks-store-demo
+    app: mongodb
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   serviceName: mongodb
@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: mongodb
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -46,7 +46,7 @@ kind: Service
 metadata:
   name: mongodb
   labels:
-    app: aks-store-demo
+    app: mongodb
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   ports:
@@ -63,7 +63,7 @@ kind: ConfigMap
 metadata:
   name: rabbitmq-enabled-plugins
   labels:
-    app: aks-store-demo
+    app: rabbitmq
     backstage.io/kubernetes-id: aks-store-demo
 ---
 apiVersion: apps/v1
@@ -71,7 +71,7 @@ kind: StatefulSet
 metadata:
   name: rabbitmq
   labels:
-    app: aks-store-demo
+    app: rabbitmq
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   serviceName: rabbitmq
@@ -82,7 +82,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: rabbitmq
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -124,7 +124,7 @@ kind: Service
 metadata:
   name: rabbitmq
   labels:
-    app: aks-store-demo
+    app: rabbitmq
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   selector:
@@ -143,7 +143,7 @@ kind: Deployment
 metadata:
   name: order-service
   labels:
-    app: aks-store-demo
+    app: order-service
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -153,7 +153,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: order-service
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -221,7 +221,7 @@ kind: Service
 metadata:
   name: order-service
   labels:
-    app: aks-store-demo
+    app: order-service
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   type: ClusterIP
@@ -237,7 +237,7 @@ kind: Deployment
 metadata:
   name: makeline-service
   labels:
-    app: aks-store-demo
+    app: makeline-service
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -247,7 +247,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: makeline-service
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -305,7 +305,7 @@ kind: Service
 metadata:
   name: makeline-service
   labels:
-    app: aks-store-demo
+    app: makeline-service
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   type: ClusterIP
@@ -321,7 +321,7 @@ kind: Deployment
 metadata:
   name: product-service
   labels:
-    app: aks-store-demo
+    app: product-service
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -331,7 +331,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: product-service
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -371,7 +371,7 @@ kind: Service
 metadata:
   name: product-service
   labels:
-    app: aks-store-demo
+    app: product-service
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   type: ClusterIP
@@ -387,7 +387,7 @@ kind: Deployment
 metadata:
   name: store-front
   labels:
-    app: aks-store-demo
+    app: store-front
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -397,7 +397,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: store-front
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -447,7 +447,7 @@ kind: Service
 metadata:
   name: store-front
   labels:
-    app: aks-store-demo
+    app: store-front
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   ports:
@@ -462,7 +462,7 @@ kind: Deployment
 metadata:
   name: store-admin
   labels:
-    app: aks-store-demo
+    app: store-front
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -472,7 +472,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: store-admin
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -537,7 +537,7 @@ kind: Deployment
 metadata:
   name: virtual-customer
   labels:
-    app: aks-store-demo
+    app: virtual-customer
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -547,7 +547,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aks-store-demo
+        app: virtual-customer
         backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
@@ -573,7 +573,7 @@ kind: Deployment
 metadata:
   name: virtual-worker
   labels:
-    app: aks-store-demo
+    app: virtual-worker
     backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
@@ -584,6 +584,7 @@ spec:
     metadata:
       labels:
         app: virtual-worker
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
