@@ -5,7 +5,8 @@ metadata:
   description: aks-store-demo
   annotations:
     github.com/project-slug: 'poplar0713/aks-store-demo'
-    backstage.io/kubernetes-label-selector: 'app=aks-store-demo'
+    # backstage.io/kubernetes-label-selector: 'app=aks-store-demo'
+    backstage.io/kubernetes-id: 'aks-store-demo'
 spec:
   type: service
   lifecycle: production
