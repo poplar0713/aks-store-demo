@@ -14,7 +14,8 @@ spec:
   template:
     metadata:
       labels:
-        app: mongodb
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -81,7 +82,8 @@ spec:
   template:
     metadata:
       labels:
-        app: rabbitmq
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -151,7 +153,8 @@ spec:
   template:
     metadata:
       labels:
-        app: order-service
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -244,7 +247,8 @@ spec:
   template:
     metadata:
       labels:
-        app: makeline-service
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -327,7 +331,8 @@ spec:
   template:
     metadata:
       labels:
-        app: product-service
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -392,7 +397,8 @@ spec:
   template:
     metadata:
       labels:
-        app: store-front
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -466,7 +472,8 @@ spec:
   template:
     metadata:
       labels:
-        app: store-admin
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
@@ -540,7 +547,8 @@ spec:
   template:
     metadata:
       labels:
-        app: virtual-customer
+        app: aks-store-demo
+        backstage.io/kubernetes-id: aks-store-demo
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
