@@ -31,3 +31,8 @@ jobs:
     
     - name: Deploy to Kubernetes
       run: kubectl apply -f aks-store-all-in-one.yaml -n pets
+
+    - name: Check Pods Status
+      run: |
+        kubectl get pods -n pets
+      continue-on-error: true
