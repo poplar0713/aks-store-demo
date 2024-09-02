@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mongodb
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   serviceName: mongodb
   replicas: 1
@@ -41,6 +44,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mongodb
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   ports:
   - port: 27017
@@ -55,11 +61,17 @@ data:
 kind: ConfigMap
 metadata:
   name: rabbitmq-enabled-plugins
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 ---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rabbitmq
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   serviceName: rabbitmq
   replicas: 1
@@ -109,6 +121,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rabbitmq
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   selector:
     app: rabbitmq
@@ -125,6 +140,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: order-service
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
@@ -199,6 +217,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: order-service
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   type: ClusterIP
   ports:
@@ -212,6 +233,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: makeline-service
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
@@ -276,6 +300,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: makeline-service
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   type: ClusterIP
   ports:
@@ -289,6 +316,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: product-service
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
@@ -335,6 +365,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: product-service
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   type: ClusterIP
   ports:
@@ -348,6 +381,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: store-front
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
@@ -404,6 +440,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: store-front
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   ports:
   - port: 80
@@ -416,6 +455,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: store-admin
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
@@ -472,18 +514,24 @@ apiVersion: v1
 kind: Service
 metadata:
   name: store-admin
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   ports:
   - port: 80
     targetPort: 8081
   selector:
     app: store-admin
-  type: LoadBalancer  
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: virtual-customer
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
@@ -516,6 +564,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: virtual-worker
+  labels:
+    app: aks-store-demo
+    backstage.io/kubernetes-id: aks-store-demo
 spec:
   replicas: 1
   selector:
