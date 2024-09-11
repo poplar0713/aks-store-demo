@@ -10,6 +10,8 @@ metadata:
     argocd/proxy-url: '/argocd/api'
     argocd/app-name: 'aks-store-demo'
     jira/project-key: 'KAN'
+    jenkins.io/job-full-name: "backstage demo"
+    
 spec:
   type: service
   lifecycle: production
