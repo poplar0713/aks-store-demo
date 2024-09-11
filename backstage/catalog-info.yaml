@@ -6,7 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: 'poplar0713/aks-store-demo'
     # backstage.io/kubernetes-label-selector: 'app=aks-store-demo'
-    backstage.io/kubernetes-id: 'aks-idp-demo'
+    backstage.io/kubernetes-id: 'aks-store-demo'
     argocd/proxy-url: '/argocd/api'
     argocd/app-name: 'aks-store-demo'
     jira/project-key: 'KAN'
