@@ -11,6 +11,7 @@ metadata:
     argocd/app-name: 'aks-store-demo'
     jira/project-key: 'KAN'
     jenkins.io/job-full-name: "backstage demo"
+    azure-container-registry/repository-name: 'nginx'
     
 spec:
   type: service
