@@ -9,6 +9,7 @@ metadata:
     backstage.io/kubernetes-id: 'aks-idp-demo'
     argocd/proxy-url: '/argocd/api'
     argocd/app-name: 'aks-store-demo'
+    jira/project-key: 'KAN'
 spec:
   type: service
   lifecycle: production
